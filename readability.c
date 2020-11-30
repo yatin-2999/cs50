@@ -6,9 +6,9 @@
 
 int main(void)
 {
-  string text = get_string("text: ");
+  string s = get_string("text: ");
   int letters = 0, words = 0, sentences = 0;
-  
+
   for(int i=0; i<strlen(s); i++)
   {
     if(isalpha(s[i]))
@@ -24,13 +24,13 @@ int main(void)
       sentences++;
     }
   }
-  
-  words++
 
-  float l = ((float)letters / (float)words) * 100;
-  float s = ((float)sentences / (float)words) * 100;
-  float grade = 0.0588 * l - 0.296 * s - 15.8;
-  
+  words++;
+
+  float L = ((float)letters / (float)words) * 100;
+  float S = ((float)sentences / (float)words) * 100;
+  float grade = 0.0588 * L - 0.296 * S - 15.8;
+
   if (grade < 16 && grade >= 0)
   {
     printf("Grade %i\n", (int) round(grade));
